@@ -1,10 +1,10 @@
 import { connectDB } from "@/lib/mongodb";
 import notes from "@/models/notes";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 // steps to solve add note api-post
 
-export async function POST(req:Request) {
+export async function POST(req:NextRequest) {
     try{
         await connectDB()
         const body = await req.json()
